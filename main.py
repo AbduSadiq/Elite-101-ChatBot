@@ -1,44 +1,56 @@
-print("Hello There, I'm Abdurrafay's virtual assistant.")
+from nrclex import NRCLex
 
-name = input("What may your name be?")
-
-print("Woah, "  + name +  ", that's a new one!")
+print("Welcome to Apple's customer service for their Texas branch. I am your virtual assistant Alex, before we begin, I will just be needing some information.")
 input("Press enter to continue...")
 
-age = int(input("How old may you happen to be?"))
-if 0 <= age < 18:
-    print ( "You've got some years ahead of you!")
-    input("Press enter to continue...")
-elif 18 <= age < 60:
-    print ("You're almost an adult, act mature!")
-    input("Press enter to continue...")
-elif age > 60:
-    print ("Don't forget to use your senior discounts!")
-    input("Press enter to continue...")
-else:
-    print ("Be a role model!")
-    input("Press enter to continue...")
+name = input("Please enter your name: ")
 
-input("How may I help you today?")
-
+print("Great, " + name + ", what will you be needing help with today? ")
 
 while True:
-    print("Choose an option!")
-    print("1)Option 1")
-    print("2)Option 2")
-    print("3)Option 3")
-    print("4)Exit chat")
+    print("Choose an option #! ")
+    print("1) Start a return.")
+    print("2) Start an exchange.")
+    print("3) Following up about an existing purchase.")
+    print("4) Exit chat")
 
-    choice = input("Make a choice please.")
+    choice = input("Make a choice please: ")
 
     if choice == '1':
-        print("You chose option 1, this is just a placeholder.")
+        input("Looks like you want to start a return, may I have your order number.")
+
+        city = input("Great, Now please enter your city: ")
+
+        stores_in_cities = {
+            "Austin": ["Domain (Northside)", "Barton Creek"],
+            "Dallas": ["NorthPark Center", "Knox Street", "Galleria Dallas" ],
+            "Houston": ["Memorial City", "Houston Galleria", "Willowbrook Mall", "Highland Village"],
+            "El Paso": ["Cielo Vista Mall"],
+            "Fort Worth": ["University Park Village"],
+            "Friendswood": ["Baybrook"],
+            "San Antonio": ["North Star", "La Cantera"],
+            "Southlake": ["Southlake Town Square"],
+            "Sugar Land": ["First Colony Mall"],
+            "The Woodlands": ["The Woodlands"]
+        }
+
+        if city in stores_in_cities:
+            print("Here are the stores available for " + city + ".")
+            for store in stores_in_cities[city]:
+                print("-" + store)
+        else:
+            print("Invalid city, please try again.")
+
+        input("Press enter to continue...")
+
+        print("Alright, I have provided you with a return ID below which you will enter at the location closest to you in your city. Return ID:", uuid.uuid4())
+        print("Have a great day, Goodbye")
         break
     elif choice == '2':
-        print("You chose option 2, this is just a placeholder.")
+        print("Looks like you want to start an exchange, may I have your order number.")
         break
     elif choice == '3':
-        print("You chose option 3, this is just a placeholder.")
+        print("Looks like you want to follow up for an existing order, may I have your order number.")
         break
     elif choice == '4':
         print("Have a great day, Goodbye")
