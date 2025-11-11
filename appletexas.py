@@ -44,9 +44,12 @@ while True:
 # Detects the emotion.
 
     if choice == '1':
-        input("Looks like you want to start a return, may I have your order number.")
+        input("Looks like you want to start a return, may I have your order number. ")
 
         city = input("Great, Now please enter your city: ")
+
+        cityCase = city.title()    
+
         city_emotion = NRCLex(city)
         top_city_emotion = city_emotion.top_emotions
         if top_city_emotion:
@@ -81,9 +84,13 @@ while True:
         break
         
     elif choice == '2':
-        print("Looks like you want to start an exchange, may I have your order number.")
+        orderNumber = input("Looks like you want to start an exchange, may I have your order number. ")
+
+        print("Here is what I found for " + orderNumber)
 
         city = input("Great, Now please enter your city: ")
+
+        cityCase = city.title()  
 
         stores_in_cities = {
             "Austin": ["Domain (Northside)", "Barton Creek"],
